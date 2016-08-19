@@ -194,17 +194,17 @@ true && true
 ```
 And these return false:
 ```
-false && false
+true && false
 ```
 ```
 a = "craft"
 b = "academy"
-a == b && "craft" == "academy"
+a == "craft" && "craft" == "academy"
 ```
 
 > Tip! If you're assessing a && comparison and you find one side to be false, you don't even have to look at the other side. You know the comparison will return false.
 
-|| only needs *one* side of the statement to be true in order to return true. These examples are true:
+|| only needs *one* side of the statement to be true in order to return true. These examples return true:
 ```
 true || false
 ```
@@ -222,7 +222,7 @@ a == b || a == "academy"
 
 ### Arrays
 
-**Arrays are groups of values, stored in ```[]```**
+**Arrays are groups of values, stored in ```[]```.**  
 You can store a nearly limitless number of items in an array. These values are accessed using a number called an "index". It starts at 0, so the first item is found at [0], the second at [1] and so on:
 ```
 myArray = ["sunshine", "happiness", "balance"]
@@ -260,6 +260,8 @@ Ruby:
 myHash[:name]
 => "Amber"
 ```
+
+Javascript:
 ```
 myHash.number
 => 8
@@ -286,8 +288,9 @@ d
 
 ### How computers see our code
 
-**First thing you need to know is that our computers will only do what we tell them to do, and nothing else.**  
-The best errors are the ones *we* make, because we can fix them. The worst errors are the ones that are related to the things we didn't build: problems with browsers, incompatibility, something called "deprecation" (which means we're using an old version of something), and problems with our testing or working environments.
+**First thing you need to know is that our computers will do exactly what we tell them to do, and nothing else.**  
+The best errors are the ones *we* make, because we can fix them. The worst errors are the ones that are related to the things we didn't build: problems with browsers, incompatibility, something called "deprecation" (which means we're using an old version of something), and problems with our testing or working environments.  
+Sometimes a problem is because of our code and sometimes it's because of some other thing we're using to run our code. Differentiating between the two is an amazing skill to build, but super hard.
 
 **Computers read our code from top to bottom.**
 Our computers can only see the code that's already run (that is earlier in the program).
@@ -301,3 +304,4 @@ c
 It's too late for c to ever read ```a == b``` as true (even though it is now) because c has *already been set to "false"*.
 
 > A major (perceived) exception to this is when we call functions from within other functions. We'll get to that. Suffice to say that this is *not* an exception at all, it just looks like it.
+> This will become immediately apparent when we start debugging. You'll be able to watch your code move line by line and analyze it at each step.
