@@ -2,7 +2,6 @@
 
 #### Hosted by Amber
 
-
 ```
 describe "it teaches fundamentals of coding" do
     workshop(programming_fundamentals)
@@ -61,7 +60,7 @@ var variable = 10;
 ```
 var variable1 = "Amber";
 var variable2 = [];
-var variable3 = function () { do_something };
+var variable3 = function () { // do something };
 ```
 
 In our last example, if we "call" variable3, it will perform the function that it is "set" to.
@@ -125,21 +124,22 @@ An operator performs mathematical functions or compares between objects. You sho
 ```
 a = 3
 b = 2
-a + b = 5
-a - b = 1
-a * b = 6
-a / b = 1.5
+a + b => 5
+a - b => 1
+a * b => 6
+a / b => 1.5
 ```
 
 Let's pay special attention to these:
 ```
-a**b = 3^2 = 9
-a%b = whaaaaa? (it's 1 in our example here)
+a**b = 3^2 => 9
+a%b
 ```
 The ```**``` takes one number *to the power* of another. We haven't used this yet, but we might at some point.
 
 The ```%``` is called a "modulus" and it calculates the *remainder* after dividing one number into another.  
-Say you have two kids and seven apples. You don't have a knife, so you'll have to divide the apples whole. Each kid gets three apples and there's one left over. That ONE is the remainder.
+Say you have two kids and seven apples. You don't have a knife, so you'll have to divide the apples whole. Each kid gets three apples and there's one left over. That ONE is the remainder.  
+In our example above, ```a%b = 1```.
 
 ### Comparison Operators
 

@@ -53,19 +53,19 @@ An example (in Ruby):
 class Person
   attr_accessor :name
 
-  def goToBootcamp
+  def go_to_bootcamp
     return "Bootcamp is great!"
   end
 end
 ```
-We've created a class "Person" that has one attribute, name, and who can do one thing: goToBootcamp. So now we can create an *instance* of Person. We can create an infinite number of instances of Person and they can interact.
+We've created a class "Person" that has one attribute, name, and who can do one thing: go_to_bootcamp. So now we can create an *instance* of Person. We can create an infinite number of instances of Person and they can interact.
 
 Ruby:
 ```
 amber = Person.new
 amber.name = "Amber"
 
-amber.goToBootcamp
+amber.go_to_bootcamp
 => "Bootcamp is great!"
 
 amber.name
@@ -80,10 +80,10 @@ FizzBuzz.prototype.count = function(num) {
   // some code will run here
 }
 ```
-means that a FizzBuzz object can do count. Any function we create using ```FizzBuzz.prototype.functionName``` can be done by a Person object.
+means that a FizzBuzz object can do count. Any function we create using ```FizzBuzz.prototype.functionName``` can be done by a FizzBuzz object.
 ```
 player = new FizzBuzz();
 player.count(3);
 => undefined
 ```
-but note! it doesn't thrown an error, we just didn't tell the function "count" to do anything. There's nothing to return, so it's undefined.
+but note! it doesn't throw an error, we just didn't tell the function "count" to do anything. There's nothing to return, so it's undefined.
