@@ -192,7 +192,10 @@ true && true
 ```
 3 == 3 && 9 == 9
 ```
-And this one returns false:
+And these return false:
+```
+false && false
+```
 ```
 a = "craft"
 b = "academy"
@@ -228,10 +231,73 @@ myArray[0]
 myArray[2]
 => "balance"
 ```
-Let's get complicated for a second. You can *also* use a variable to find a value in an array, as long as that variable is set to a number and that number corresponds to an index that has a value in your array.
+Let's get complicated for a second. You can *also* use a variable to find a value in an array:
 ```
 number = 2
 myArray[number]
 => "balance"
 ```
+But you'll get nothing if there's no value at that index:
+```
+number = 12
+myArray[number]
+=> undefined
+```
 >Tip! You'll do shit like that *constantly* in programming.
+
+### Hashes
+
+**Hashes are a lot like arrays, but they have special properties.**
+
+Here's an example of a hash:
+```
+myHash = {key: value, number: 8, name: "Amber"}
+```
+The bits behind the : are called the "key" and the bits after are called the "value". Different languages access the keys and values in hashes differently but the idea is the same.
+
+Ruby:
+```
+myHash[:name]
+=> "Amber"
+```
+```
+myHash.number
+=> 8
+```
+> What about ```myHash[:key]```? That's going to return undefined. Can you tell me why?
+
+### Complicating shit
+
+So you've seen an array and you've seen a hash. The tricky part is when things get really complicated. You can have arrays inside of hashes and hashes inside of arrays. And hashes inside of hashes inside of hashes. Javascript has no problem with this:
+```
+a = {key: "value"};
+b = {a, number: 3};
+c = {b, a, sign: "pisces"};
+d = [c, "hotdogs"]
+d
+=> [{b: {a: {key: "value"},
+    number: 3},
+    a: {key: "value"},
+    sign: "pisces"},
+    "hotdogs"]
+```
+
+## A Bit of Theory
+
+### How computers see our code
+
+**First thing you need to know is that our computers will only do what we tell them to do, and nothing else.**  
+The best errors are the ones *we* make, because we can fix them. The worst errors are the ones that are related to the things we didn't build: problems with browsers, incompatibility, something called "deprecation" (which means we're using an old version of something), and problems with our testing or working environments.
+
+**Computers read our code from top to bottom.**
+Our computers can only see the code that's already run (that is earlier in the program).
+```
+a = 3
+c = (a == b)
+b = 3
+c
+=> false
+```
+It's too late for c to ever read ```a == b``` as true (even though it is now) because c has *already been set to "false"*.
+
+> A major (perceived) exception to this is when we call functions from within other functions. We'll get to that. Suffice to say that this is *not* an exception at all, it just looks like it.
