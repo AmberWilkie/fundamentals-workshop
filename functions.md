@@ -43,3 +43,47 @@ end
 ```
 
 **It's critically important to be able to follow your values all the way down into the functions you are calling.** Many times we are putting variables into functions into variables on and on. If we can keep track of what information those variables hold the whole way through, we will be able to write our code. Otherwise, we will be completely lost.
+
+## Classes
+
+Classes are collections of functions and variables that can be encapsulated in one object.
+
+An example (in Ruby):
+```
+class Person
+  attr_accessor :name
+
+  def goToBootcamp
+    return "Bootcamp is great!"
+  end
+end
+```
+We've created a class "Person" that has one attribute, name, and who can do one thing: goToBootcamp. So now we can create an *instance* of Person. We can create an infinite number of instances of Person and they can interact.
+
+Ruby:
+```
+amber = Person.new
+amber.name = "Amber"
+
+amber.goToBootcamp
+=> "Bootcamp is great!"
+
+amber.name
+=> "Amber"
+```
+
+**Javascript doesn't have classes, exactly. Instead we use a concept called "inheritance" to "extend" other functions.** All you really need to understand, at this point, is that:
+```
+function FizzBuzz() {};
+
+FizzBuzz.prototype.count = function(num) {
+  // some code will run here
+}
+```
+means that a FizzBuzz object can do count. Any function we create using ```FizzBuzz.prototype.functionName``` can be done by a Person object.
+```
+player = new FizzBuzz();
+player.count(3);
+=> undefined
+```
+but note! it doesn't thrown an error, we just didn't tell the function "count" to do anything. There's nothing to return, so it's undefined.

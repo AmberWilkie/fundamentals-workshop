@@ -31,7 +31,9 @@ if (name == "Amber") {
 ```
 Both of these functions will return "awesome!"
 
-**The important thing to keep in mind is that anything following ```if``` in ```{}``` should evaluate to true or false.** If it evaluates to undefined, it will throw an error (Ruby) or simply show as false and move on (Javascript). That looks like this:
+**The important thing to keep in mind is that anything following ```if``` in ```{}``` should evaluate to true or false.** If it evaluates to undefined, it will throw an error (Ruby) or simply show as false and move on (Javascript).
+
+That looks like this:
 ```
 var name;
 if (name == "Amber") {
