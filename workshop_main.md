@@ -121,7 +121,7 @@ craft == academy
 ```
 Every language has its own rules and it's a matter of learning them. It kinda sucks, but being able to work in different languages is a SKILL that will get you more MONEY.
 
-**Dolla dolla bill y'all** 😎
+**Dolla dolla bill y'all** 😎🎉💰💰💰💰💰💰🎉🎉💰💰💰🎉🎉🎉
 
 ## Operators
 > Courtesy of [Craft Academy prep course](https://craftacademy.gitbooks.io/caa_precourse/content/)
@@ -175,7 +175,7 @@ We'll use `a = 3, b = 4, c = "3"` for our examples.
   # true
   ```
 
-- We can talk about the rest together:
+- We have our greater-than or less-than operators:
   ```ruby
   a > b
   # false
@@ -189,6 +189,9 @@ b = 3
 a >= b
 # true
 a <= b
+# true
+# And, obviously:
+a = b
 # true
 ```
 
@@ -274,7 +277,7 @@ myHash[:name]
 => "Amber"
 ```
 
-Javascript:
+Javascript doesn't have truth hashes like Ruby does. Javascript hashes are called "associative arrays". The most important thing to know now is just to be careful when using Javascript "hashes" and don't expect them to always work like Ruby hashes.
 ```javascript
 myHash.number
 => 8
@@ -284,7 +287,7 @@ myHash.number
 
 ### Complicating shit
 
-So you've seen an array and you've seen a hash. The tricky part is when things get really complicated. You can have arrays inside of hashes and hashes inside of arrays. And hashes inside of hashes inside of hashes. Javascript has no problem with this:
+So you've seen an array and you've seen a hash. Sometimes things can get really complicated. You can have arrays inside of hashes and hashes inside of arrays. And hashes inside of hashes inside of hashes. Javascript has no problem with this:
 
 ```javascript
 a = {key: "value"};
