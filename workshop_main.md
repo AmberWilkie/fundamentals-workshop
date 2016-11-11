@@ -1,14 +1,5 @@
 # Fundamentals of Programming Workshop
 
-#### Hosted by Amber
-
-```ruby
-describe "it teaches fundamentals of coding" do
-  workshop(programming_fundamentals)
-  expect(August_Cohort).toProduce(twenty_percent_more_awesome_code)
-end
-```
-
 ## Variables
 
 ### Vad fan är "variable" för nåt?
