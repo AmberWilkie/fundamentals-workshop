@@ -76,7 +76,12 @@ In our last example, if we "call" variable3, it will perform the function that i
 #### Variable types
 
 ##### Strings
-Any set of characters within `""` or `''` .
+Any set of characters within `""` or `''` . Computers interpret strings from the start of a `'` or `"` until the "closing" `'` or `"`. That means a computer sees this:
+```
+"this      13497s234 function() //blahblah var setting = 12 'single quotes'    is all one string"
+```
+- You can put quotes inside each other, to be able to use a `'` inside a string. Like so: `"Here's a string with a 'bunch' of 'quoted text' inside"`
+- There are ways to get a computer to interpret what's inside a string as an executable bit of code. This is called "string interpolation" - you'll learn about it later.
 
 ##### Integers
 Whole numbers: `3`, `9`, `2349872357`
