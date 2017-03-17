@@ -12,45 +12,31 @@ def do_something
 end
 ```
 
-And here's one in Javascript:
-
-```javascript
-function do_something() {
-  return "something"
-};
-```
-
-#### Passing information into our methods
+### Passing information into our methods
 
 Our functions can also *accept* information and use it. Here we are going to pass in the value stored in the variable "number".
 
 ```ruby
-number = 5
-def show_number(whatup)
-  return whatup * 2
+def show_number(num)
+  num * 2
 end
 
+number = 5
 show_number(number)
 => 10
 ```
 
-> Remember that Ruby doesn't need us to type "return", it will automatically return from the last line of code in our function. However I've kept it here because there's nothing wrong with doing it and it makes everything more explicit.
+> Remember that Ruby doesn't need us to type "return", it will automatically return from the last line of code in our function.
 
-#### Following inputs all the way down
-
-Let's head back to the example above. What is the relationship between `whatup` and `number`? In this example, I've replaced the variables (nicknames) with the values they are holding.
-
+#### Inputs
+In our method above, `num` is our input. The method `show_number` takes one _argument_ or piece of information. That means it will not run unless given a piece of information. If we try to give it two pieces of information, it will also complain.
+This method takes two pieces of information:
 ```ruby
-number = 5
-show_number(5)
-  # and when it goes into our function
-  return 5*2
+def two_infos(info1, info2)
+    // code
 end
-
-=> 10
 ```
-
-**It's critically important to be able to follow your values all the way down into the functions you are calling.** Many times we are putting variables into functions into variables on and on. If we can keep track of what information those variables hold the whole way through, we will be able to write our code. Otherwise, we will be completely lost.
+This method will be called like this: `two_infos(3, 'house')` where `x` and `y`, in our example, can be literally any type of information. The number 3 will be stored inside of `info1` and used in the method, whereas `'house'` will be stored in `info2`. This concept can be tricky at first - make sure you understand arguments!
 
 ## Classes
 
@@ -63,12 +49,12 @@ class Person
   attr_accessor :name
 
   def go_to_bootcamp
-    return "Bootcamp is great!"
+    "Bootcamp is great!"
   end
 end
 ```
 
-We've created a class `Person` that has one attribute, `name`, and who can do one thing: `#go_to_bootcamp`. So now we can create an *instance* of Person. We can create an infinite number of instances of Person and they can interact.
+We've created a class `Person` that has one attribute, `name`, and who can do one thing: `go_to_bootcamp`. So now we can create an *instance* of Person. We can create an infinite number of instances of Person and they can interact.
 
 Ruby:
 ```ruby
@@ -81,23 +67,3 @@ amber.go_to_bootcamp
 amber.name
 => "Amber"
 ```
-
-**Javascript doesn't have classes, exactly. Instead we use a concept called "inheritance" to "extend" other functions.** All you really need to understand, at this point, is that:
-
-```javascript
-function FizzBuzz() {};
-
-FizzBuzz.prototype.count = function(num) {
-  // some code will run here
-}
-```
-
-means that a FizzBuzz object can do count. Any function we create using `FizzBuzz.prototype.functionName` can be done by a FizzBuzz object.
-
-```javascript
-player = new FizzBuzz();
-player.count(3);
-=> undefined
-```
-
-but note! it doesn't throw an error, we just didn't tell the function `count` to do anything. There's nothing to return, so it's undefined.

@@ -20,49 +20,21 @@ You can think of variables as "nicknames" (smeknamn) for numbers, strings, funct
 
 **When you create a variable, you "declare it".**
 
-Javascript:
-```javascript
-var variable;
-```
-
-In Ruby, we don't really declare variables. The first time you use (or assign a value to) a variable it is created in memory
+In Ruby, the first time you use (or assign a value to) a variable it is created in memory
 ```ruby
-variable = some_value
+variable = 'something'
 ```
 
 **When you "set" or "assign" a variable, you store some information in it. That information is called a "value".**
-
-Javascript:
-```javascript
-variable = 10;
-```
 
 Ruby:
 ```ruby
 variable = 10
 ```
+#### Return
+Methods often "return" or spit out information. When we say that a method "returns" `3`, that means that after all the code inside the method has finished running, the method gives `3` as output. We'll return to inputs later.
 
-** (in JS) We can declare variables and set them at the same time:**
-```javascript
-var variable = 10;
-```
-
-**We store information in variables in the same way, regardless of what the information is. Examples from Javascript:**
-```javascript
-var variable1 = "Amber";
-var variable2 = [];
-var variable3 = function () {
-   // do something
-};
-```
-
-In our last example, if we "call" variable3, it will perform the function that it is "set" to.
-
->If you "call" a variable, you are just using it:
-  ```shell
-  console.log(variable1);
-  => "Amber"
-  ```
+!['input-output image'](https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/CPT_Hardware-InputOutput.svg/1212px-CPT_Hardware-InputOutput.svg.png)
 
 #### Variable types
 
@@ -84,38 +56,17 @@ Note, non-Americans, that we use a period (.) instead of a comma (,) for amounts
 
 ##### Boolean
 `True` or `false`. Nothing else is a boolean response - black or white, all or nothing, true or false. All of these examples return true:
-```javascript
-return true;
-```
 
 ```ruby
 true == true
 false == false
 ```
 
-```javascript
-var craft = 3;
-var academy = 3;
-craft == academy
-```
-
-And in Javascript this is also true:
-
-```javascript
-var craft = 3;
-var academy = "3";
-craft == academy
-=> true
-```
-
-But not in Ruby:
 ```ruby
 craft = 3;
-academy = "3";
+academy = 3;
 craft == academy
-=> false
 ```
-Every language has its own rules and it's a matter of learning them. It kinda sucks, but being able to work in different languages is a SKILL that will get you more MONEY.
 
 **Dolla dolla bill y'all** 😎🎉💰💰💰💰💰💰🎉🎉💰💰💰🎉🎉🎉
 
@@ -137,7 +88,7 @@ a / b => 1.5
 
 Let's pay special attention to these:
 ```ruby
-a**b = 3^2 => 9
+a**b => 3^2 => 9
 a%b
 ```
 
@@ -149,51 +100,41 @@ In our example above, `a%b = 1`.
 
 ### Comparison Operators
 
-We'll use `a = 3, b = 4, c = "3"` for our examples.
-
 - `==` checks that two values are the same and returns true or false:
   ```ruby
-  a == b
-  => false
-  ```
-- `===` checks that two values are the same AND checks that they are the same *type*. Not every language cares about that.
-
-  ```ruby
-  a == c
-  # true (in Javascript, not in Ruby)
-  a === c
+  3 == 4
   # false
   ```
 
 - `!=` checks that the two values are *not* equal.
   ```ruby
-  a != b
+  3 != 4
   # true
   ```
 
 - We have our greater-than or less-than operators:
   ```ruby
-  a > b
+  3 > 4
   # false
-  a < b
+  3 < 4
   # true
   ```
+
 There are also operators that allow a value to be equal to *or* greater than another:
 ```ruby
-a = 3
-b = 3
-a >= b
+3 >= 4
+# false
+3 <= 4
 # true
-a <= b
-# true
+
 # And, obviously:
-a = b
+3 == 3
 # true
 ```
 
 ### Logical Operators
 
-Logical operators also return true or false.
+Logical operators also return `true` or `false`.
 
 - `&&` checks that both sides of a statement are true. These examples return true:
   ```ruby
@@ -204,21 +145,17 @@ Logical operators also return true or false.
 
   ```ruby
   true && false
-  a = "craft"
-  b = "academy"
-  a == "craft" && "craft" == "academy"
+  "craft" == "craft" && "craft" == "academy"
   ```
 
-> Tip! If you're assessing a && comparison and you find one side to be false, you don't even have to look at the other side. You know the comparison will return false.
+> Tip! If you're assessing a `&&` comparison and you find one side to be false, you don't even have to look at the other side. You know the comparison will return false.
 
 - `||` only needs *one* side of the statement to be true in order to return true. These examples return true:
 
   ```ruby
   true || false
   3 == 3 || 3 == 9
-  a = "craft"
-  b = "academy"
-  a == b || a == "academy"
+  "craft" == "academy" || "craft" == "craft"
   ```
 > Tip! If you're assessing a `||` comparison and you find one side to be true, you don't even have to look at the other side. You know the comparison will return true.
 
@@ -230,30 +167,28 @@ Logical operators also return true or false.
 You can store a nearly limitless number of items in an array. These values are accessed using a number called an `index`. It starts at `0`, so the first item is found at `[0]`, the second at `[1]` and so on:
 
 ```ruby
-myArray = ["sunshine", "happiness", "balance"]
-myArray[0]
+my_array = ["sunshine", "happiness", "balance"]
+my_array[0]
 => "sunshine"
-myArray[2]
+my_array[2]
 => "balance"
 ```
 
-Let's get complicated for a second. You can *also* use a variable to find a value in an array:
+You can *also* use a variable to find a value in an array:
 
 ```ruby
 number = 2
-myArray[number]
+my_array[number]
 => "balance"
 ```
 
-But you'll get nothing if there's no value at that index:
+But you'll get `nil` if there's no value at that index:
 
 ```ruby
 number = 12
-myArray[number]
-=> undefined
+my_array[number]
+=> nil
 ```
-
->Tip! You'll do shit like that *constantly* in programming.
 
 ### Hashes
 
@@ -262,30 +197,26 @@ myArray[number]
 Here's an example of a hash:
 
 ```ruby
-myHash = {key: value, number: 8, name: "Amber"}
+my_hash = {key: value, number: 8, name: "Amber"}
 ```
 
 The bits behind the : are called the "key" and the bits after are called the "value". Different languages access the keys and values in hashes differently but the idea is the same.
 
 Ruby:
 ```ruby
-myHash[:name]
+my_hash[:name]
 => "Amber"
-```
-
-Javascript doesn't have truth hashes like Ruby does. Javascript hashes are called "associative arrays". The most important thing to know now is just to be careful when using Javascript "hashes" and don't expect them to always work like Ruby hashes.
-```javascript
-myHash.number
+my_hash[:number]
 => 8
 ```
 
-> What about `myHash[:key]`? That's going to return undefined. Can you tell me why?
+> What about `my_hash[:key]`? That's going to throw an error. Can you tell me why?
 
 ### Complicating shit
 
-So you've seen an array and you've seen a hash. Sometimes things can get really complicated. You can have arrays inside of hashes and hashes inside of arrays. And hashes inside of hashes inside of hashes. Javascript has no problem with this:
+So you've seen an array and you've seen a hash. Sometimes things can get really complicated. You can have arrays inside of hashes and hashes inside of arrays. And hashes inside of hashes inside of hashes. Ruby has no problem with this:
 
-```javascript
+```ruby
 a = {key: "value"};
 b = {a, number: 3};
 c = {b, a, sign: "pisces"};
@@ -297,6 +228,7 @@ d
     sign: "pisces"},
     "hotdogs"]
 ```
+We'll see complicated structures like this a lot in the camp, as JSON strings. The only takeaway at the moment: don't be afraid of them.
 
 ## A Bit of Theory
 
@@ -310,14 +242,14 @@ Sometimes a problem is because of our code and sometimes it's because of some ot
 Our computers can only see the code that's already run (that is earlier in the program).
 
 ```ruby
-a = 3
-c = (a == b)
-b = 3
-c
+num1 = 3
+num2 = 4
+check = (num1 == num2)
+num2 = 3
+check
 => false
 ```
 
-It's too late for `c` to ever read `a == b` as true (even though it is now) because `c` has *already been set to "false"*.
+It's too late for `check` to ever read `num1 == num2` as true (even though it is now) because `check` has *already been set to "false"*. Even though `num2` changed, `check` was already set.
 
-> A major (perceived) exception to this is when we call functions from within other functions. We'll get to that. Suffice to say that this is *not* an exception at all, it just looks like it.
 > This will become immediately apparent when we start debugging. You'll be able to watch your code move line by line and analyze it at each step.
